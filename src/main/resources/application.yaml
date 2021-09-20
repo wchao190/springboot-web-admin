@@ -1,0 +1,56 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 20MB
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/mybatis
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      stat-view-servlet:         #开启监控页功能;
+        enabled: true
+        login-username: admin    #登录用户名
+        login-password: 123456   #登录密码
+        reset-enable: false      #是否开启重置按钮
+
+      web-stat-filter:           #开启监控web,监控web应用
+        enabled: true
+        url-pattern: /*          #监控所有应用
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,/download'  #排除这些应用
+
+      filters: wall,stat,slf4j         #开启防火墙, sql监控;
+
+      aop-patterns:
+        com.atguigu.webadmin.*   #监控哪些 SpringBean
+
+      filter:
+        stat:                    #sql监控的详细配置;
+          slow-sql-millis: 1000
+          log-slow-sql: true     #是否记录慢查询
+          enabled: true          #开启监控
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false   #不允许删表操作
+
+  jdbc:
+    template:
+      query-timeout: 10
+
+mybatis:
+  #config-location:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    enabled-by-default: true
+  endpoint:
+    health:
+      show-details: always

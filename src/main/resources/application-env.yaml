@@ -1,0 +1,9 @@
+server:
+  port: 8090
+
+car:
+  carName: MG-env
+  model: ER6
+st:
+  name: env-zhangsan
+  school: 初级中学

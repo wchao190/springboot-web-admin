@@ -1,0 +1,8 @@
+server:
+  port: 8000
+st:
+  name: test-zhangsan
+  school: 高级中学
+car:
+  carName: MG-test
+  model: ER6

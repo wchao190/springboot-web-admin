@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "car",
+      "type": "com.atguigu.webadmin.bean.BydCar",
+      "sourceType": "com.atguigu.webadmin.bean.BydCar"
+    },
+    {
+      "name": "car",
+      "type": "com.atguigu.webadmin.bean.SaicCar",
+      "sourceType": "com.atguigu.webadmin.bean.SaicCar"
+    }
+  ],
+  "properties": [
+    {
+      "name": "car.car-name",
+      "type": "java.lang.String",
+      "sourceType": "com.atguigu.webadmin.bean.BydCar"
+    },
+    {
+      "name": "car.car-name",
+      "type": "java.lang.String",
+      "sourceType": "com.atguigu.webadmin.bean.SaicCar"
+    },
+    {
+      "name": "car.model",
+      "type": "java.lang.String",
+      "sourceType": "com.atguigu.webadmin.bean.BydCar"
+    },
+    {
+      "name": "car.model",
+      "type": "java.lang.String",
+      "sourceType": "com.atguigu.webadmin.bean.SaicCar"
+    }
+  ],
+  "hints": []
+}
